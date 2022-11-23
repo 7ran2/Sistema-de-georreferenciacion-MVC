@@ -10,7 +10,7 @@ namespace Modelo
 {
     internal class M_Concexion
     {
-        private SqlConnection Conexion = new SqlConnection("Server=SERVIDOR;DataBase=BASE DE DATOS;Integrated Security=true");
+        private SqlConnection Conexion = new SqlConnection("Server=GWNR71517\\SQLEXPRESS;DataBase=PRUEBAS;Integrated Security=true");
         public SqlConnection AbrirConexion()
         {
             if(Conexion.State==ConnectionState.Closed)
