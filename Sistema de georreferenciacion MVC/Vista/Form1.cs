@@ -34,9 +34,10 @@ namespace Vista
             dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
             dt.Columns.Add(new DataColumn("Lat", typeof(double)));
             dt.Columns.Add(new DataColumn("Long", typeof(double)));
+            dt.Columns.Add(new DataColumn("Direccion", typeof(string)));
 
             //Insertar un adto en el datagrid
-            dt.Rows.Add("Ubicacion 1", LatInicial, LngInicial);
+            dt.Rows.Add("Ubicacion 1", LatInicial, LngInicial,"Direccion 1");
             dataGridView1.DataSource = dt;
 
             //Desactivar visivilidad de columnas
@@ -71,6 +72,7 @@ namespace Vista
             txtDescripcion.Text = dataGridView1.Rows[filaseleccionada].Cells[0].Value.ToString();
             txtLatitud.Text = dataGridView1.Rows[filaseleccionada].Cells[1].Value.ToString();
             txtLongitud.Text = dataGridView1.Rows[filaseleccionada].Cells[2].Value.ToString();
+            txtDireccion.Text = dataGridView1.Rows[filaseleccionada].Cells[3].Value.ToString();
             //Asignamos los valores del grid al marcador 
             marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
             //Se posiciona el foco del mapa en esa posicion
@@ -96,7 +98,7 @@ namespace Vista
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Agregar Datos del txt a DataGrid
-            dt.Rows.Add(txtDescripcion.Text, txtLatitud.Text, txtLongitud.Text);
+            dt.Rows.Add(txtDescripcion.Text, txtLatitud.Text, txtLongitud.Text,txtDireccion.Text);
             txtDescripcion.Text = "";
             //Aqui pueden ir los procedimientos con BD
         }

@@ -24,5 +24,15 @@ namespace Controlador
             //Aqui se validan los datos, si es necesario hacer conversion, hay que hacerlo.
             objeto_M.InsertarAsociado_M(Convert.ToInt32(carnet), nombres, apellidos, Convert.ToDateTime(fecha_nacimiento), estado,usuario);
         }
+        public void ModificarAsociados_C(string id, string carnet, string nombres, string apellidos, string fecha_nacimiento, string estado, string usuario)
+        {
+            //Aqui se validan los datos, si es necesario hacer conversion, hay que hacerlo.
+            objeto_M.ModificarAsociado_M(Convert.ToInt32(id),Convert.ToInt32(carnet), nombres, apellidos, Convert.ToDateTime(fecha_nacimiento), estado, usuario);
+        }
+        public void EliminarAsociados_C(string id, string usuario)
+        {
+            //Aqui se validan los datos, si es necesario hacer conversion, hay que hacerlo.
+            objeto_M.EliminarAsociado_M(Convert.ToInt32(id),usuario);
+        }
     }
 }

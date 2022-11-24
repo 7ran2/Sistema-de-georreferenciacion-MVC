@@ -39,12 +39,14 @@
             this.txtLatitud = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRuta
             // 
-            this.btnRuta.Location = new System.Drawing.Point(908, 237);
+            this.btnRuta.Location = new System.Drawing.Point(928, 343);
             this.btnRuta.Margin = new System.Windows.Forms.Padding(4);
             this.btnRuta.Name = "btnRuta";
             this.btnRuta.Size = new System.Drawing.Size(100, 28);
@@ -58,18 +60,18 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(600, 272);
+            this.dataGridView1.Location = new System.Drawing.Point(594, 396);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(437, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(507, 279);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SeleccionarRegistro);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(908, 201);
+            this.btnEliminar.Location = new System.Drawing.Point(928, 307);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
@@ -80,7 +82,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(908, 165);
+            this.btnAgregar.Location = new System.Drawing.Point(928, 271);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 28);
@@ -167,20 +169,40 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(573, 512);
+            this.gMapControl1.Size = new System.Drawing.Size(573, 644);
             this.gMapControl1.TabIndex = 9;
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDoubleClick);
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(639, 296);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(237, 84);
+            this.txtDireccion.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(636, 277);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Direccion";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 688);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.btnRuta);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -210,6 +232,8 @@
         private System.Windows.Forms.TextBox txtLatitud;
         private System.Windows.Forms.TextBox txtDescripcion;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.Label label4;
     }
 }
 
