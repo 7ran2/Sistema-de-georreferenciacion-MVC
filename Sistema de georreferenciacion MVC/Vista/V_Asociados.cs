@@ -14,7 +14,7 @@ namespace Vista
 {
     public partial class V_Asociados : Form
     {
-        public string usuario="franz";
+        public string usuario="f";
         Controlador.C_Asociados objeto_C = new C_Asociados();
         string idAsociado = "";
         public V_Asociados()
@@ -107,7 +107,7 @@ namespace Vista
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Seguro que desea Eliminar?", "Eiminar",
+            DialogResult result = MessageBox.Show("Seguro que desea Eliminar a " + txtNombres.Text+" "+txtApellidos.Text+"?", "Eiminar",
             MessageBoxButtons.YesNoCancel);
 
             if (result == DialogResult.Yes)
@@ -121,6 +121,11 @@ namespace Vista
             {
                 MessageBox.Show("Cancelado");
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

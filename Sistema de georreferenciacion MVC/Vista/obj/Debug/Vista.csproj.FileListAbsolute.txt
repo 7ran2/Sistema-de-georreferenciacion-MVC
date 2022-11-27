@@ -18,3 +18,4 @@ C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Siste
 C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Asociados.resources
 C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\bin\Debug\Modelo.dll
 C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\bin\Debug\Modelo.pdb
+C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Login.resources

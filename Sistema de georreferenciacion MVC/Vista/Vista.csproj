@@ -72,6 +72,12 @@
     <Compile Include="V_Asociados.Designer.cs">
       <DependentUpon>V_Asociados.cs</DependentUpon>
     </Compile>
+    <Compile Include="V_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Login.Designer.cs">
+      <DependentUpon>V_Login.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +95,9 @@
     </Compile>
     <EmbeddedResource Include="V_Asociados.resx">
       <DependentUpon>V_Asociados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_Login.resx">
+      <DependentUpon>V_Login.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
