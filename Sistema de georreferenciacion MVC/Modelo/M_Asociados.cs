@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Data.SqlClient;
 using System.Data;
 using System.Runtime.InteropServices;
@@ -20,13 +19,6 @@ namespace Modelo
 
         public DataTable MostrarAsociados_M()
         {
-            ////Transact
-            //comando.Connection = conexion.AbrirConexion();
-            //comando.CommandText = "select * from asociados";
-            //leer = comando.ExecuteReader();
-            //tabla.Load(leer);
-            //conexion.CerrarConexion();
-            //return tabla;
             ////Procedimientos almacenados
             comando = new SqlCommand();//Refrescar comando
             comando.Connection = conexion.AbrirConexion();

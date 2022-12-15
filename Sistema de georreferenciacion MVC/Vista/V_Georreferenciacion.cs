@@ -15,16 +15,16 @@ using GMap.NET.WindowsForms.Markers;
 
 namespace Vista
 {
-    public partial class Form1 : Form
+    public partial class V_Georreferenciacion : Form
     {
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
         int filaseleccionada = 0;
-        double LatInicial = -16.4927153388791;
-        double LngInicial = -68.1269073486328;
+        double LatInicial = -16.572782;
+        double LngInicial = -68.173222;
 
-        public Form1()
+        public V_Georreferenciacion()
         {
             InitializeComponent();
         }
@@ -46,7 +46,7 @@ namespace Vista
 
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
-            gMapControl1.MapProvider = GMapProviders.GoogleMap;
+            gMapControl1.MapProvider = GMapProviders.GoogleSatelliteMap;
             gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
             gMapControl1.MinZoom = 0;
             gMapControl1.MaxZoom = 24;

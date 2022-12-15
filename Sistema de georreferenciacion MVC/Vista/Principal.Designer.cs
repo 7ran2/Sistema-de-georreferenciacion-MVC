@@ -32,7 +32,6 @@
             this.unoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeAsociadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeMantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,10 +39,10 @@
             this.georreferenciacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeCoordenadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vistaDeCoordenadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.asociadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,10 +50,10 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asociadosToolStripMenuItem,
             this.unoToolStripMenuItem,
             this.mantenimientoToolStripMenuItem,
-            this.georreferenciacionToolStripMenuItem,
-            this.asociadosToolStripMenuItem});
+            this.georreferenciacionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1419, 28);
@@ -65,8 +64,7 @@
             // 
             this.unoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeDatosToolStripMenuItem,
-            this.registroDeAsociadosToolStripMenuItem,
-            this.controlToolStripMenuItem1});
+            this.registroDeAsociadosToolStripMenuItem});
             this.unoToolStripMenuItem.Name = "unoToolStripMenuItem";
             this.unoToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.unoToolStripMenuItem.Text = "Seguimiento";
@@ -82,12 +80,6 @@
             this.registroDeAsociadosToolStripMenuItem.Name = "registroDeAsociadosToolStripMenuItem";
             this.registroDeAsociadosToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.registroDeAsociadosToolStripMenuItem.Text = "Registro de asociados";
-            // 
-            // controlToolStripMenuItem1
-            // 
-            this.controlToolStripMenuItem1.Name = "controlToolStripMenuItem1";
-            this.controlToolStripMenuItem1.Size = new System.Drawing.Size(238, 26);
-            this.controlToolStripMenuItem1.Text = "control";
             // 
             // mantenimientoToolStripMenuItem
             // 
@@ -138,13 +130,6 @@
             this.vistaDeCoordenadasToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.vistaDeCoordenadasToolStripMenuItem.Text = "Vista de coordenadas";
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(12, 31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1395, 726);
-            this.panel1.TabIndex = 1;
-            // 
             // asociadosToolStripMenuItem
             // 
             this.asociadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -166,6 +151,13 @@
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
             this.listaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.listaToolStripMenuItem.Text = "Lista";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(12, 31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1395, 726);
+            this.panel1.TabIndex = 1;
             // 
             // Principal
             // 
@@ -191,7 +183,6 @@
         private System.Windows.Forms.ToolStripMenuItem unoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeAsociadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem controlToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeMantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaDeMantenimientosToolStripMenuItem;
