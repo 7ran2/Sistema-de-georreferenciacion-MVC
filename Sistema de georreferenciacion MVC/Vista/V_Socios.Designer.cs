@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class V_Asociados
+    partial class V_Socios
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbxEstado = new System.Windows.Forms.CheckBox();
+            this.chbxEstado = new System.Windows.Forms.CheckBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.cbbxExtension = new System.Windows.Forms.ComboBox();
+            this.rdbtnOriginario = new System.Windows.Forms.RadioButton();
+            this.rdbtnComprador = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +77,7 @@
             // 
             this.txtCarnet.Location = new System.Drawing.Point(769, 48);
             this.txtCarnet.Name = "txtCarnet";
-            this.txtCarnet.Size = new System.Drawing.Size(318, 22);
+            this.txtCarnet.Size = new System.Drawing.Size(255, 22);
             this.txtCarnet.TabIndex = 2;
             // 
             // txtNombres
@@ -112,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(765, 196);
+            this.label4.Location = new System.Drawing.Point(766, 250);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 16);
             this.label4.TabIndex = 1;
@@ -121,25 +124,25 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(766, 257);
+            this.label5.Location = new System.Drawing.Point(767, 311);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 16);
             this.label5.TabIndex = 1;
             this.label5.Text = "Estado";
             // 
-            // cbxEstado
+            // chbxEstado
             // 
-            this.cbxEstado.AutoSize = true;
-            this.cbxEstado.Location = new System.Drawing.Point(769, 276);
-            this.cbxEstado.Name = "cbxEstado";
-            this.cbxEstado.Size = new System.Drawing.Size(66, 20);
-            this.cbxEstado.TabIndex = 6;
-            this.cbxEstado.Text = "Activo";
-            this.cbxEstado.UseVisualStyleBackColor = true;
+            this.chbxEstado.AutoSize = true;
+            this.chbxEstado.Location = new System.Drawing.Point(770, 330);
+            this.chbxEstado.Name = "chbxEstado";
+            this.chbxEstado.Size = new System.Drawing.Size(66, 20);
+            this.chbxEstado.TabIndex = 6;
+            this.chbxEstado.Text = "Activo";
+            this.chbxEstado.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(769, 344);
+            this.btnGuardar.Location = new System.Drawing.Point(770, 398);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 7;
@@ -149,7 +152,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(1012, 344);
+            this.btnCancelar.Location = new System.Drawing.Point(1013, 398);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -159,7 +162,7 @@
             // 
             // dtpFechaNacimiento
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(769, 215);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(770, 269);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(318, 22);
             this.dtpFechaNacimiento.TabIndex = 9;
@@ -167,7 +170,7 @@
             // btnModificar
             // 
             this.btnModificar.Enabled = false;
-            this.btnModificar.Location = new System.Drawing.Point(850, 344);
+            this.btnModificar.Location = new System.Drawing.Point(851, 398);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 10;
@@ -178,7 +181,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(931, 344);
+            this.btnEliminar.Location = new System.Drawing.Point(932, 398);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 11;
@@ -196,18 +199,61 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // V_Asociados
+            // cbbxExtension
+            // 
+            this.cbbxExtension.FormattingEnabled = true;
+            this.cbbxExtension.Items.AddRange(new object[] {
+            "LP",
+            "CH",
+            "CB",
+            "OR",
+            "PT",
+            "TJ",
+            "SC",
+            "BE",
+            "PD"});
+            this.cbbxExtension.Location = new System.Drawing.Point(1030, 48);
+            this.cbbxExtension.Name = "cbbxExtension";
+            this.cbbxExtension.Size = new System.Drawing.Size(57, 24);
+            this.cbbxExtension.TabIndex = 13;
+            // 
+            // rdbtnOriginario
+            // 
+            this.rdbtnOriginario.AutoSize = true;
+            this.rdbtnOriginario.Location = new System.Drawing.Point(795, 208);
+            this.rdbtnOriginario.Name = "rdbtnOriginario";
+            this.rdbtnOriginario.Size = new System.Drawing.Size(86, 20);
+            this.rdbtnOriginario.TabIndex = 14;
+            this.rdbtnOriginario.TabStop = true;
+            this.rdbtnOriginario.Text = "Originario";
+            this.rdbtnOriginario.UseVisualStyleBackColor = true;
+            // 
+            // rdbtnComprador
+            // 
+            this.rdbtnComprador.AutoSize = true;
+            this.rdbtnComprador.Location = new System.Drawing.Point(921, 208);
+            this.rdbtnComprador.Name = "rdbtnComprador";
+            this.rdbtnComprador.Size = new System.Drawing.Size(96, 20);
+            this.rdbtnComprador.TabIndex = 15;
+            this.rdbtnComprador.TabStop = true;
+            this.rdbtnComprador.Text = "Comprador";
+            this.rdbtnComprador.UseVisualStyleBackColor = true;
+            // 
+            // V_Socios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 530);
+            this.Controls.Add(this.rdbtnComprador);
+            this.Controls.Add(this.rdbtnOriginario);
+            this.Controls.Add(this.cbbxExtension);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.cbxEstado);
+            this.Controls.Add(this.chbxEstado);
             this.Controls.Add(this.txtApellidos);
             this.Controls.Add(this.txtNombres);
             this.Controls.Add(this.txtCarnet);
@@ -218,9 +264,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "V_Asociados";
+            this.Name = "V_Socios";
             this.Text = "V_Asociados";
-            this.Load += new System.EventHandler(this.V_Asociados_Load);
+            this.Load += new System.EventHandler(this.V_Socios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,12 +284,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox cbxEstado;
+        private System.Windows.Forms.CheckBox chbxEstado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.ComboBox cbbxExtension;
+        private System.Windows.Forms.RadioButton rdbtnOriginario;
+        private System.Windows.Forms.RadioButton rdbtnComprador;
     }
 }

@@ -26,7 +26,7 @@ namespace Vista
 
         private void administrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            V_Asociados Asociados= new V_Asociados();
+            V_Socios Asociados= new V_Socios();
             Asociados.TopLevel=false;
             panel1.Controls.Add(Asociados);
             Asociados.Show();
