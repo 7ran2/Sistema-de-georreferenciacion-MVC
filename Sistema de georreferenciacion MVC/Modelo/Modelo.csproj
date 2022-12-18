@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M_Georreferenciaciones.cs" />
     <Compile Include="M_Socios.cs" />
     <Compile Include="M_Concexion.cs" />
     <Compile Include="M_Login.cs" />

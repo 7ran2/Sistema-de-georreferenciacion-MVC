@@ -35,21 +35,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtLongitud = new System.Windows.Forms.TextBox();
-            this.txtLatitud = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtProfundidad = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNuevaTrayectoria = new System.Windows.Forms.Button();
-            this.txtTrayectoria = new System.Windows.Forms.TextBox();
+            this.txtProfundidad = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
+            this.txtLatitud = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtLongitud = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnNuevaTrayectoria = new System.Windows.Forms.Button();
+            this.cbxTrayectorias = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -131,31 +132,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Descripcion";
             // 
-            // txtLongitud
-            // 
-            this.txtLongitud.Location = new System.Drawing.Point(8, 75);
-            this.txtLongitud.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLongitud.Name = "txtLongitud";
-            this.txtLongitud.Size = new System.Drawing.Size(237, 22);
-            this.txtLongitud.TabIndex = 12;
-            // 
-            // txtLatitud
-            // 
-            this.txtLatitud.Location = new System.Drawing.Point(8, 27);
-            this.txtLatitud.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLatitud.Name = "txtLatitud";
-            this.txtLatitud.Size = new System.Drawing.Size(237, 22);
-            this.txtLatitud.TabIndex = 11;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(7, 300);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(237, 85);
-            this.txtDescripcion.TabIndex = 10;
-            // 
             // gMapControl1
             // 
             this.gMapControl1.Bearing = 0F;
@@ -184,14 +160,6 @@
             this.gMapControl1.Zoom = 0D;
             this.gMapControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDoubleClick);
             // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(7, 184);
-            this.txtDireccion.Multiline = true;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(237, 31);
-            this.txtDireccion.TabIndex = 20;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -202,18 +170,6 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Direccion";
             // 
-            // cbxTipo
-            // 
-            this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Nodo Inicial",
-            "Arco",
-            "Nodo Final"});
-            this.cbxTipo.Location = new System.Drawing.Point(7, 128);
-            this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(237, 24);
-            this.cbxTipo.TabIndex = 21;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -223,13 +179,6 @@
             this.label5.Size = new System.Drawing.Size(35, 16);
             this.label5.TabIndex = 15;
             this.label5.Text = "Tipo";
-            // 
-            // txtProfundidad
-            // 
-            this.txtProfundidad.Location = new System.Drawing.Point(7, 248);
-            this.txtProfundidad.Name = "txtProfundidad";
-            this.txtProfundidad.Size = new System.Drawing.Size(100, 22);
-            this.txtProfundidad.TabIndex = 22;
             // 
             // label6
             // 
@@ -273,23 +222,58 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(507, 394);
             this.panel1.TabIndex = 23;
-            this.panel1.Visible = false;
             // 
-            // btnNuevaTrayectoria
+            // txtProfundidad
             // 
-            this.btnNuevaTrayectoria.Location = new System.Drawing.Point(888, 31);
-            this.btnNuevaTrayectoria.Name = "btnNuevaTrayectoria";
-            this.btnNuevaTrayectoria.Size = new System.Drawing.Size(174, 26);
-            this.btnNuevaTrayectoria.TabIndex = 24;
-            this.btnNuevaTrayectoria.Text = "Crear Nueva Trayectoria";
-            this.btnNuevaTrayectoria.UseVisualStyleBackColor = true;
+            this.txtProfundidad.Location = new System.Drawing.Point(7, 248);
+            this.txtProfundidad.Name = "txtProfundidad";
+            this.txtProfundidad.Size = new System.Drawing.Size(100, 22);
+            this.txtProfundidad.TabIndex = 22;
             // 
-            // txtTrayectoria
+            // txtDescripcion
             // 
-            this.txtTrayectoria.Location = new System.Drawing.Point(1069, 33);
-            this.txtTrayectoria.Name = "txtTrayectoria";
-            this.txtTrayectoria.Size = new System.Drawing.Size(319, 22);
-            this.txtTrayectoria.TabIndex = 25;
+            this.txtDescripcion.Location = new System.Drawing.Point(7, 300);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(237, 85);
+            this.txtDescripcion.TabIndex = 10;
+            // 
+            // cbxTipo
+            // 
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Nodo Inicial",
+            "Arco",
+            "Nodo Final"});
+            this.cbxTipo.Location = new System.Drawing.Point(7, 128);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(237, 24);
+            this.cbxTipo.TabIndex = 21;
+            // 
+            // txtLatitud
+            // 
+            this.txtLatitud.Location = new System.Drawing.Point(8, 27);
+            this.txtLatitud.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLatitud.Name = "txtLatitud";
+            this.txtLatitud.Size = new System.Drawing.Size(237, 22);
+            this.txtLatitud.TabIndex = 11;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(7, 184);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(237, 31);
+            this.txtDireccion.TabIndex = 20;
+            // 
+            // txtLongitud
+            // 
+            this.txtLongitud.Location = new System.Drawing.Point(8, 75);
+            this.txtLongitud.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLongitud.Name = "txtLongitud";
+            this.txtLongitud.Size = new System.Drawing.Size(237, 22);
+            this.txtLongitud.TabIndex = 12;
             // 
             // label8
             // 
@@ -301,13 +285,41 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Nombre de trayectoria o sector";
             // 
+            // btnNuevaTrayectoria
+            // 
+            this.btnNuevaTrayectoria.Location = new System.Drawing.Point(888, 31);
+            this.btnNuevaTrayectoria.Name = "btnNuevaTrayectoria";
+            this.btnNuevaTrayectoria.Size = new System.Drawing.Size(174, 26);
+            this.btnNuevaTrayectoria.TabIndex = 24;
+            this.btnNuevaTrayectoria.Text = "Crear Trayectoria";
+            this.btnNuevaTrayectoria.UseVisualStyleBackColor = true;
+            // 
+            // cbxTrayectorias
+            // 
+            this.cbxTrayectorias.FormattingEnabled = true;
+            this.cbxTrayectorias.Location = new System.Drawing.Point(1137, 35);
+            this.cbxTrayectorias.Name = "cbxTrayectorias";
+            this.cbxTrayectorias.Size = new System.Drawing.Size(121, 24);
+            this.cbxTrayectorias.TabIndex = 27;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1283, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // V_Georreferenciacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1401, 758);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbxTrayectorias);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtTrayectoria);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.gMapControl1);
@@ -332,21 +344,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtLongitud;
-        private System.Windows.Forms.TextBox txtLatitud;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtProfundidad;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnNuevaTrayectoria;
-        private System.Windows.Forms.TextBox txtTrayectoria;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtProfundidad;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.ComboBox cbxTipo;
+        private System.Windows.Forms.TextBox txtLatitud;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtLongitud;
+        private System.Windows.Forms.Button btnNuevaTrayectoria;
+        private System.Windows.Forms.ComboBox cbxTrayectorias;
+        private System.Windows.Forms.Button button1;
     }
 }
 

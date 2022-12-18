@@ -17,6 +17,9 @@ namespace Vista
 {
     public partial class V_Georreferenciacion : Form
     {
+        public string usuario = "f";
+        string idSocio = "";
+
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -24,29 +27,42 @@ namespace Vista
         double LatInicial = -16.572782;
         double LngInicial = -68.173222;
 
+        Controlador.C_Georreferenciaciones objeto_C = new Controlador.C_Georreferenciaciones();
+        DataTable dtTrayectoriasLista =new DataTable();
+        DataTable dtTrayectoriasRegistradas = new DataTable();
+        //        int idTrayectoria;
         public V_Georreferenciacion()
         {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //TrayectoriasRegistradas();
+            listarTrayectorias();
+
             dt = new DataTable();
-            dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
-            dt.Columns.Add(new DataColumn("Lat", typeof(double)));
-            dt.Columns.Add(new DataColumn("Long", typeof(double)));
-            dt.Columns.Add(new DataColumn("Direccion", typeof(string)));
+            //dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
+            //dt.Columns.Add(new DataColumn("Lat", typeof(double)));
+            //dt.Columns.Add(new DataColumn("Long", typeof(double)));
+            //dt.Columns.Add(new DataColumn("Direccion", typeof(string)));
+            dt = objeto_C.MostrarGeorreferenciaciones_C();
 
             //Insertar un adto en el datagrid
-            dt.Rows.Add("Ubicacion 1", LatInicial, LngInicial,"Direccion 1");
+            //dt.Rows.Add("Ubicacion 1", LatInicial, LngInicial, "Direccion 1");
             dataGridView1.DataSource = dt;
 
             //Desactivar visivilidad de columnas
+            dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].Visible = false;
-            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
 
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
             gMapControl1.MapProvider = GMapProviders.GoogleSatelliteMap;
+            //gMapControl1.MapProvider = GMapProviders.GoogleMap;
             gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
             gMapControl1.MinZoom = 0;
             gMapControl1.MaxZoom = 24;
@@ -64,15 +80,27 @@ namespace Vista
             //ahora agregamos el mapa y el marcador al map control
             gMapControl1.Overlays.Add(markerOverlay);
         }
-
+        private void listarTrayectorias()
+        {
+            //Asignar Datos a comboBox
+            dtTrayectoriasLista = objeto_C.MostrarTrayectorias_C();
+            cbxTrayectorias.DataSource = dtTrayectoriasLista;
+            cbxTrayectorias.DisplayMember = "nombre_t";
+            cbxTrayectorias.ValueMember = "num_orden_t";
+        }
         private void SeleccionarRegistro(object sender, DataGridViewCellMouseEventArgs e)
         {
             filaseleccionada = e.RowIndex;//Fila seleccionada
-            //Recuperamos los datos del grid y los agignamos a text box
-            txtDescripcion.Text = dataGridView1.Rows[filaseleccionada].Cells[0].Value.ToString();
-            txtLatitud.Text = dataGridView1.Rows[filaseleccionada].Cells[1].Value.ToString();
-            txtLongitud.Text = dataGridView1.Rows[filaseleccionada].Cells[2].Value.ToString();
-            txtDireccion.Text = dataGridView1.Rows[filaseleccionada].Cells[3].Value.ToString();
+            ////Recuperamos los datos del grid y los agignamos a text box
+            //txtDescripcion.Text = dataGridView1.Rows[filaseleccionada].Cells[0].Value.ToString();
+            //txtLatitud.Text = dataGridView1.Rows[filaseleccionada].Cells[1].Value.ToString();
+            //txtLongitud.Text = dataGridView1.Rows[filaseleccionada].Cells[2].Value.ToString();
+            //txtDireccion.Text = dataGridView1.Rows[filaseleccionada].Cells[3].Value.ToString();
+
+            txtLatitud.Text = dt.Rows[filaseleccionada][2].ToString();
+            txtLongitud.Text = dt.Rows[filaseleccionada][3].ToString();
+            txtDescripcion.Text = dt.Rows[filaseleccionada][6].ToString();
+
             //Asignamos los valores del grid al marcador 
             marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
             //Se posiciona el foco del mapa en esa posicion
@@ -98,7 +126,7 @@ namespace Vista
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //Agregar Datos del txt a DataGrid
-            dt.Rows.Add(txtDescripcion.Text, txtLatitud.Text, txtLongitud.Text,txtDireccion.Text);
+            dt.Rows.Add(0,0, txtLatitud.Text, txtLongitud.Text,0,1,"des",1,"f","18/12/1994");
             txtDescripcion.Text = "";
             //Aqui pueden ir los procedimientos con BD
         }
@@ -118,8 +146,8 @@ namespace Vista
             // Agarramos los datos del grid
             for (int filas = 0; filas < dataGridView1.Rows.Count; filas++)
             {
-                lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[1].Value);
-                lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
+                lat = Convert.ToDouble(dataGridView1.Rows[filas].Cells[2].Value);
+                lng = Convert.ToDouble(dataGridView1.Rows[filas].Cells[3].Value);
                 puntos.Add(new PointLatLng(lat, lng));
             }
 
@@ -129,6 +157,20 @@ namespace Vista
             // actualizar el mapa
             gMapControl1.Zoom = gMapControl1.Zoom - 1;
             gMapControl1.Zoom = gMapControl1.Zoom + 1;
+        }
+        
+        public int CantidadTrayectorias()
+        {
+            int cantTrayectorias = 0;
+            cantTrayectorias = objeto_C.CantidadTrayectorias_C(cbxTrayectorias.Text, Convert.ToInt32(cbxTrayectorias.SelectedValue));
+            return cantTrayectorias;
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(cbxTrayectorias.Text + " , " + cbxTrayectorias.SelectedValue.ToString());
+            
+            MessageBox.Show("Cantidad = "+ CantidadTrayectorias().ToString());
         }
     }
 }
