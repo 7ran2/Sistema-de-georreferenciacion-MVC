@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,6 +30,7 @@ namespace Vista
 
         Controlador.C_Georreferenciaciones objeto_C = new Controlador.C_Georreferenciaciones();
         DataTable dtTrayectoriasLista =new DataTable();
+        DataTable dtTiposLista = new DataTable();
         DataTable dtTrayectoriasRegistradas = new DataTable();
         //        int idTrayectoria;
         public V_Georreferenciacion()
@@ -39,26 +41,8 @@ namespace Vista
         {
             //TrayectoriasRegistradas();
             listarTrayectorias();
-
-            dt = new DataTable();
-            //dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
-            //dt.Columns.Add(new DataColumn("Lat", typeof(double)));
-            //dt.Columns.Add(new DataColumn("Long", typeof(double)));
-            //dt.Columns.Add(new DataColumn("Direccion", typeof(string)));
-            dt = objeto_C.MostrarGeorreferenciaciones_C();
-
-            //Insertar un adto en el datagrid
-            //dt.Rows.Add("Ubicacion 1", LatInicial, LngInicial, "Direccion 1");
-            dataGridView1.DataSource = dt;
-
-            //Desactivar visivilidad de columnas
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].Visible = false;
-            dataGridView1.Columns[4].Visible = false;
-            dataGridView1.Columns[5].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
-            dataGridView1.Columns[8].Visible = false;
-
+            listarTipos();
+            MostraGeorrefenciaciones();
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
             gMapControl1.MapProvider = GMapProviders.GoogleSatelliteMap;
@@ -80,25 +64,51 @@ namespace Vista
             //ahora agregamos el mapa y el marcador al map control
             gMapControl1.Overlays.Add(markerOverlay);
         }
+        public void MostraGeorrefenciaciones()
+        {
+            dt = new DataTable();
+            //dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
+            //dt.Columns.Add(new DataColumn("Lat", typeof(double)));
+            //dt.Columns.Add(new DataColumn("Long", typeof(double)));
+            //dt.Columns.Add(new DataColumn("Direccion", typeof(string)));
+            dt = objeto_C.MostrarGeorreferenciaciones_C();
+
+            //Insertar un adto en el datagrid
+            //dt.Rows.Add("Ubicacion 1", LatInicial, LngInicial, "Direccion 1");
+            dataGridView1.DataSource = dt;
+
+            //Desactivar visivilidad de columnas
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+        }
         private void listarTrayectorias()
         {
             //Asignar Datos a comboBox
-            dtTrayectoriasLista = objeto_C.MostrarTrayectorias_C();
+            dtTrayectoriasLista = objeto_C.ListarTrayectorias_C();
             cbxTrayectorias.DataSource = dtTrayectoriasLista;
             cbxTrayectorias.DisplayMember = "nombre_t";
-            cbxTrayectorias.ValueMember = "num_orden_t";
+            cbxTrayectorias.ValueMember = "id_trayectoria";
+        }
+        private void listarTipos()
+        {
+            //Asignar Datos a comboBox
+            dtTiposLista = objeto_C.ListarTipos_C();
+            cbxTipo.DataSource = dtTiposLista;
+            cbxTipo.DisplayMember = "nombre_gt";
+            cbxTipo.ValueMember = "tipo_gt";
         }
         private void SeleccionarRegistro(object sender, DataGridViewCellMouseEventArgs e)
         {
             filaseleccionada = e.RowIndex;//Fila seleccionada
             ////Recuperamos los datos del grid y los agignamos a text box
-            //txtDescripcion.Text = dataGridView1.Rows[filaseleccionada].Cells[0].Value.ToString();
             //txtLatitud.Text = dataGridView1.Rows[filaseleccionada].Cells[1].Value.ToString();
-            //txtLongitud.Text = dataGridView1.Rows[filaseleccionada].Cells[2].Value.ToString();
-            //txtDireccion.Text = dataGridView1.Rows[filaseleccionada].Cells[3].Value.ToString();
-
             txtLatitud.Text = dt.Rows[filaseleccionada][2].ToString();
             txtLongitud.Text = dt.Rows[filaseleccionada][3].ToString();
+            txtProfundidad.Text = dt.Rows[filaseleccionada][4].ToString();
             txtDescripcion.Text = dt.Rows[filaseleccionada][6].ToString();
 
             //Asignamos los valores del grid al marcador 
@@ -125,9 +135,16 @@ namespace Vista
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            int prof= Convert.ToInt32(txtProfundidad.Text);
+            double multiplicador=0.01;
+            decimal profundidad = Convert.ToDecimal(prof * multiplicador);
+            objeto_C.InsertarGeorreferenciaciones_C(cbxTrayectorias.SelectedValue.ToString(),txtLatitud.Text,txtLongitud.Text,Convert.ToInt32(txtProfundidad.Text),cbxTipo.SelectedValue.ToString(),txtDescripcion.Text,"1",usuario);
+            MostraGeorrefenciaciones();
             //Agregar Datos del txt a DataGrid
-            dt.Rows.Add(0,0, txtLatitud.Text, txtLongitud.Text,0,1,"des",1,"f","18/12/1994");
+            //dt.Rows.Add(0,0, txtLatitud.Text, txtLongitud.Text,0,1,"des",1,"f","18/12/1994");
             txtDescripcion.Text = "";
+
+
             //Aqui pueden ir los procedimientos con BD
         }
 
