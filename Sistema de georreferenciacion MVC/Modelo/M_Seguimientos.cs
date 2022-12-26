@@ -12,16 +12,36 @@ namespace Modelo
     {
         private M_Concexion conexion = new M_Concexion();
 
-        SqlDataReader leer;
-        DataTable tabla = new DataTable();
+        //SqlDataReader leer;
+        //DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
         public DataTable MostrarSeguimientos_M()
         {
+            SqlDataReader leer;
+            DataTable tabla = new DataTable();
+            
             ////Procedimientos almacenados
             comando = new SqlCommand();//Refrescar comando
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "CRUD_SEGUIMIENTOS_SP";
             comando.Parameters.AddWithValue("@modo", "V");
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
+        public DataTable ListarTrayectorias()
+        {
+            SqlDataReader leer;
+            DataTable tabla = new DataTable();
+            
+            ////Procedimientos almacenados
+            comando = new SqlCommand();//Refrescar comando
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "CRUD_SEGUIMIENTOS_SP";
+            comando.Parameters.AddWithValue("@modo", "T");
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Clear();

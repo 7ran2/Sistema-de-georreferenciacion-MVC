@@ -265,7 +265,7 @@
             this.btnComprobarExistencia.Name = "btnComprobarExistencia";
             this.btnComprobarExistencia.Size = new System.Drawing.Size(174, 26);
             this.btnComprobarExistencia.TabIndex = 24;
-            this.btnComprobarExistencia.Text = "Comprobar Exixtenca";
+            this.btnComprobarExistencia.Text = "Comprobar Exixtencia";
             this.btnComprobarExistencia.UseVisualStyleBackColor = true;
             // 
             // cbxTrayectorias

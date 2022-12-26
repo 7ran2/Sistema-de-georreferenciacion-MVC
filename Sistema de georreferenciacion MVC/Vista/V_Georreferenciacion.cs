@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -183,11 +185,51 @@ namespace Vista
             return cantTrayectorias;
         }
         
+        public void ImprimirMapa()
+        {
+            string path = Path.GetTempPath() + Path.GetRandomFileName() + @".png";
+            
+            Image _tmpImage = gMapControl1.ToImage();
+            if (_tmpImage == null) return;
+            _tmpImage.Save(path);
+
+            PrintDocument printDocument1 = new PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            printDocument1.PrinterSettings= ps;
+            printDocument1.PrintPage += Imprimir;
+            printDocument1.Print();
+
+
+            //PrintDocument doc = new PrintDocument { DocumentName = "Map printing file" };
+            //doc.PrintPage += DocOnPrintPage;
+            //PrintDialog dialog = new PrintDialog { Document = doc };
+            //DialogResult result = dialog.ShowDialog();
+            //if (result == DialogResult.OK) doc.Print();
+        }
+        private void Imprimir(object sender, PrintPageEventArgs e)
+        {
+            //string path = Path.GetTempPath() + Path.GetRandomFileName() + @".png";
+
+            //Image _tmpImage = gMapControl1.ToImage();
+            //if (_tmpImage == null) return;
+            //_tmpImage.Save(path);
+
+            //PrintDocument printDocument1 = new PrintDocument();
+            //PrinterSettings ps = new PrinterSettings();
+            //printDocument1.PrinterSettings = ps;
+            //printDocument1.PrintPage += Imprimir;
+            //printDocument1.Print();
+
+            //e.Graphics.DrawImage(_tmpImage, 50, 50);
+            e.Graphics.DrawImage(gMapControl1.ToImage(),50,50);
+        }
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbxTrayectorias.Text + " , " + cbxTrayectorias.SelectedValue.ToString());
-            
-            MessageBox.Show("Cantidad = "+ CantidadTrayectorias().ToString());
+            //MessageBox.Show(cbxTrayectorias.Text + " , " + cbxTrayectorias.SelectedValue.ToString());
+
+            //MessageBox.Show("Cantidad = "+ CantidadTrayectorias().ToString());
+            //Imprimir(e);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Controlador
 {
-    internal class C_Seguimientos
+    public class C_Seguimientos
     {
 
         private M_Seguimientos objeto_M = new M_Seguimientos();
@@ -16,6 +16,12 @@ namespace Controlador
         {
             DataTable tabla = new DataTable();
             tabla = objeto_M.MostrarSeguimientos_M();
+            return tabla;
+        }
+        public DataTable ListarSeguimientos_C()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objeto_M.ListarTrayectorias();
             return tabla;
         }
         public void InsertarSeguimientos_C(string id_socio, string metros_cubicos, string litros, string fecha_hora, string estado_s, string usuario_s)
