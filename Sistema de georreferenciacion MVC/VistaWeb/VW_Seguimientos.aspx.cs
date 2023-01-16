@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -33,16 +34,18 @@ namespace VistaWeb
         }
         private void ListarTrayectorias()
         {
-            DataTable dt = new DataTable();
-            dt = objeto_C.ListarSeguimientos_C();
-
-            ListItem i;
-            foreach (DataRow r in dt.Rows)
+            if (ddlTrayectorias.Items.Count <= 0)
             {
-                i = new ListItem(r["nombre_t"].ToString(), r["id_trayectoria"].ToString());
-                ddlTrayectorias.Items.Add(i);
-            }
+                DataTable dt = new DataTable();
+                dt = objeto_C.ListarSeguimientos_C();
 
+                ListItem i;
+                foreach (DataRow r in dt.Rows)
+                {
+                    i = new ListItem(r["nombre_t"].ToString(), r["id_trayectoria"].ToString());
+                    ddlTrayectorias.Items.Add(i);
+                }
+            }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,9 +55,23 @@ namespace VistaWeb
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            //objeto_C.InsertarSeguimientos_C(txtCarnet.Text, cbbxExtension.Text, txtNombres.Text, txtApellidos.Text, tipo, dtpFechaNacimiento.Value.ToShortDateString(), estado, usuario);
-            //MessageBox.Show("Socio Registrado Correctamente");
-            //MostrarSeguimientos_V();
+            try
+            {
+
+                objeto_C.InsertarSeguimientos_C(ddlTrayectorias.SelectedValue, ddlPosicion.SelectedValue, txtLitros.Text, "1", usuario);
+
+                //MessageBox.Show("Socio Registrado Correctamente");
+                MostrarSeguimientos_V();
+                Label4.Text = "Registrado Correctamente";
+                Label4.ForeColor = System.Drawing.Color.Green;
+                txtLitros.Text = "";
+            }
+            catch(Exception ex)
+            {
+                Label4.Text = "Revise los datos Ingresados";
+                Label4.ForeColor = System.Drawing.Color.Red;
+                txtLitros.Text = "";
+            }
         }
     }
 }

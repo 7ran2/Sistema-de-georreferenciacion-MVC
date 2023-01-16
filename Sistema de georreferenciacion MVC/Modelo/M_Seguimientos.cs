@@ -24,7 +24,7 @@ namespace Modelo
             comando = new SqlCommand();//Refrescar comando
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "CRUD_SEGUIMIENTOS_SP";
-            comando.Parameters.AddWithValue("@modo", "V");
+            comando.Parameters.AddWithValue("@modo", "W");
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Clear();
@@ -49,31 +49,31 @@ namespace Modelo
             conexion.CerrarConexion();
             return tabla;
         }
-        public void InsertarSeguimiento_M(string id_socio, string metros_cubicos, string litros, string fecha_hora, string estado_s, string usuario_s)
+        public void InsertarSeguimiento_M(int id_trayectoria, int inicial_o_final_s, int litros, string estado_s, string usuario_s)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.Parameters.Clear();
             comando.CommandText = "CRUD_SEGUIMIENTOS_SP";
             comando.Parameters.AddWithValue("@modo", "I");
-            comando.Parameters.AddWithValue("@id_socio", id_socio);
-            comando.Parameters.AddWithValue("@metros_cubicos", metros_cubicos);
+            //comando.Parameters.AddWithValue("@id_socio", id_socio);
+            comando.Parameters.AddWithValue("@id_trayectoria", id_trayectoria);
+            comando.Parameters.AddWithValue("@inicial_o_final_s", inicial_o_final_s);
             comando.Parameters.AddWithValue("@litros", litros);
-            comando.Parameters.AddWithValue("@fecha_hora", fecha_hora);
             comando.Parameters.AddWithValue("@estado_s", estado_s);
             comando.Parameters.AddWithValue("@usuario_s", usuario_s);
             comando.ExecuteNonQuery();
 
         }
-        public void ModificarSeguimiento_M(string id_socio, string metros_cubicos, string litros, string fecha_hora, string estado_s, string usuario_s)
+        public void ModificarSeguimiento_M(int id_trayectoria, int inicial_o_final_s, int metros_cubicos, string estado_s, string usuario_s)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.Parameters.Clear();
             comando.CommandText = "CRUD_SEGUIMIENTOS_SP";
             comando.Parameters.AddWithValue("@modo", "U");
-            comando.Parameters.AddWithValue("@id_socio", id_socio);
+            //comando.Parameters.AddWithValue("@id_socio", id_socio);
+            comando.Parameters.AddWithValue("@id_trayectoria", id_trayectoria);
+            comando.Parameters.AddWithValue("@inicial_o_final_s", inicial_o_final_s);
             comando.Parameters.AddWithValue("@metros_cubicos", metros_cubicos);
-            comando.Parameters.AddWithValue("@litros", litros);
-            comando.Parameters.AddWithValue("@fecha_hora", fecha_hora);
             comando.Parameters.AddWithValue("@estado_s", estado_s);
             comando.Parameters.AddWithValue("@usuario_s", usuario_s);
             comando.ExecuteNonQuery();

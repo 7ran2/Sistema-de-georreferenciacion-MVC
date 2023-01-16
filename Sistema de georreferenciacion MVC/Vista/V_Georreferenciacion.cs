@@ -34,6 +34,7 @@ namespace Vista
         DataTable dtTrayectoriasLista =new DataTable();
         DataTable dtTiposLista = new DataTable();
         DataTable dtTrayectoriasRegistradas = new DataTable();
+        DataTable dtListarTrayectoriasFiltrado= new DataTable();
         //        int idTrayectoria;
         public V_Georreferenciacion()
         {
@@ -60,7 +61,7 @@ namespace Vista
             marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.green);
             markerOverlay.Markers.Add(marker);//Agregamos al mapa
             //Agregamos el tooltip de texto a los marcadores
-            marker.ToolTipMode = MarkerTooltipMode.Always;
+            marker.ToolTipMode = MarkerTooltipMode.OnMouseOver;
             marker.ToolTipText = string.Format("Ubicacion: \n Latitud: {0} \n Longitud: {1}", LatInicial, LngInicial);
 
             //ahora agregamos el mapa y el marcador al map control
@@ -185,51 +186,57 @@ namespace Vista
             return cantTrayectorias;
         }
         
-        public void ImprimirMapa()
-        {
-            string path = Path.GetTempPath() + Path.GetRandomFileName() + @".png";
+        //public void ImprimirMapa()
+        //{
+        //    string path = Path.GetTempPath() + Path.GetRandomFileName() + @".png";
             
-            Image _tmpImage = gMapControl1.ToImage();
-            if (_tmpImage == null) return;
-            _tmpImage.Save(path);
+        //    Image _tmpImage = gMapControl1.ToImage();
+        //    if (_tmpImage == null) return;
+        //    _tmpImage.Save(path);
 
-            PrintDocument printDocument1 = new PrintDocument();
-            PrinterSettings ps = new PrinterSettings();
-            printDocument1.PrinterSettings= ps;
-            printDocument1.PrintPage += Imprimir;
-            printDocument1.Print();
+        //    PrintDocument printDocument1 = new PrintDocument();
+        //    PrinterSettings ps = new PrinterSettings();
+        //    printDocument1.PrinterSettings= ps;
+        //    printDocument1.PrintPage += Imprimir;
+        //    printDocument1.Print();
 
 
-            //PrintDocument doc = new PrintDocument { DocumentName = "Map printing file" };
-            //doc.PrintPage += DocOnPrintPage;
-            //PrintDialog dialog = new PrintDialog { Document = doc };
-            //DialogResult result = dialog.ShowDialog();
-            //if (result == DialogResult.OK) doc.Print();
-        }
-        private void Imprimir(object sender, PrintPageEventArgs e)
-        {
-            //string path = Path.GetTempPath() + Path.GetRandomFileName() + @".png";
-
-            //Image _tmpImage = gMapControl1.ToImage();
-            //if (_tmpImage == null) return;
-            //_tmpImage.Save(path);
-
-            //PrintDocument printDocument1 = new PrintDocument();
-            //PrinterSettings ps = new PrinterSettings();
-            //printDocument1.PrinterSettings = ps;
-            //printDocument1.PrintPage += Imprimir;
-            //printDocument1.Print();
-
-            //e.Graphics.DrawImage(_tmpImage, 50, 50);
-            e.Graphics.DrawImage(gMapControl1.ToImage(),50,50);
-        }
-        
+        //    //PrintDocument doc = new PrintDocument { DocumentName = "Map printing file" };
+        //    //doc.PrintPage += DocOnPrintPage;
+        //    //PrintDialog dialog = new PrintDialog { Document = doc };
+        //    //DialogResult result = dialog.ShowDialog();
+        //    //if (result == DialogResult.OK) doc.Print();
+        //}
         private void button1_Click(object sender, EventArgs e)
         {
+
             //MessageBox.Show(cbxTrayectorias.Text + " , " + cbxTrayectorias.SelectedValue.ToString());
 
             //MessageBox.Show("Cantidad = "+ CantidadTrayectorias().ToString());
-            //Imprimir(e);
+
+            printPreviewDialog1.Show();
+
+            //this.printPreviewDialog1 = new PrintPreviewDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Image im = gMapControl1.ToImage();
+            e.Graphics.DrawImage(im, 50, 50);
+        }
+
+
+
+        private void cbxTrayectorias_CursorChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Seleccionó : " + cbxTrayectorias.SelectedValue.ToString());
+        }
+
+        private void cbxTrayectorias_DropDownClosed(object sender, EventArgs e)
+        {
+            dtListarTrayectoriasFiltrado = objeto_C.ListarTrayectoriasFiltrado_C(cbxTrayectorias.SelectedValue.ToString());
+            dataGridView1.DataSource = dtListarTrayectoriasFiltrado;
+            MessageBox.Show("Seleccionó : " + cbxTrayectorias.SelectedValue.ToString());
         }
     }
 }

@@ -15,12 +15,15 @@
         <div class="formcontent">
             <form id="formulario_seguimientos" runat="server">
                 <div class="form-control">
+                    <center>
                     <div class="col-md-6 text-center mb5">
                         <asp:Label class="h2" ID="Label3" runat="server" Text="Ingrese los datos del medidor"></asp:Label>
                     </div>
+                        </center>
                     <div>
-                        <asp:Label ID="Label1" runat="server" Text="Metros cubicos"></asp:Label>
-                        <asp:TextBox CssClass="form-control" ID="txtMetrosCubicos" runat="server" placeholder="Ingrese solo numeros"></asp:TextBox>
+                        <asp:Label ID="Label1" runat="server" Text="Litros"></asp:Label>
+                        <asp:TextBox CssClass="form-control" ID="txtLitros" runat="server" placeholder="Ingrese solo numeros"></asp:TextBox>
+                        <asp:Label ID="Label2" runat="server" Text="Trayectoria o Sector"></asp:Label>
                     </div>
                     
                    <%-- <div>
@@ -30,12 +33,13 @@
                     <div>
                         <asp:DropDownList ID="ddlTrayectorias" runat="server"></asp:DropDownList>
                     </div>
+                    <asp:Label ID="lblUbicacion" runat="server" Text="Ubicacion de Punto de Medicion"></asp:Label>
                     <div>
                         <asp:DropDownList ID="ddlPosicion" runat="server">
                             <asp:ListItem Value="1">Inicial</asp:ListItem>
-                            <asp:ListItem Value="2">Punto 2</asp:ListItem>
+                            <%--<asp:ListItem Value="2">Punto 2</asp:ListItem>
                             <asp:ListItem Value="3">Punto 3</asp:ListItem>
-                            <asp:ListItem Value="4">Punto 4</asp:ListItem>
+                            <asp:ListItem Value="4">Punto 4</asp:ListItem>--%>
                             <asp:ListItem Value="5">Final</asp:ListItem>
                         </asp:DropDownList>
                     </div>    

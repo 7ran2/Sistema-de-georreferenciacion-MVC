@@ -19,3 +19,9 @@ C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Siste
 C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Login.resources
 C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Georreferenciacion.resources
 C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Socios.resources
+C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Mantenimientos.resources
+C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Tipos.resources
+C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Trayectorias.resources
+C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Cargos.resources
+C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Usuarios.resources
+C:\Users\7ran2\OneDrive\Documents\GitHub\Sistema-de-georreferenciacion-MVC\Sistema de georreferenciacion MVC\Vista\obj\Debug\Vista.V_Seguimientos.resources

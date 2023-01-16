@@ -12,6 +12,12 @@ namespace Controlador
     public class C_Georreferenciaciones
     {
         private M_Georreferenciaciones objeto_M = new M_Georreferenciaciones();
+        public DataTable ListarTrayectoriasFiltrado_C(string id_trayectoria)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objeto_M.ListarTrayectoriasFiltrado_M(Convert.ToInt32(id_trayectoria));
+            return tabla;
+        }
         public DataTable ListarTrayectorias_C()
         {
             DataTable tabla = new DataTable();

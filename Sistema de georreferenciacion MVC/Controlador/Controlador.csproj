@@ -41,10 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C_Alertas.cs" />
+    <Compile Include="C_Cargos.cs" />
     <Compile Include="C_Georreferenciaciones.cs" />
+    <Compile Include="C_Mantenimientos.cs" />
     <Compile Include="C_Seguimientos.cs" />
     <Compile Include="C_Socios.cs" />
     <Compile Include="C_Login.cs" />
+    <Compile Include="C_Tipos.cs" />
+    <Compile Include="C_Trayectorias.cs" />
+    <Compile Include="C_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

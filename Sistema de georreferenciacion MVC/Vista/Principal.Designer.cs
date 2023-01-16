@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.georreferenciacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeCoordenadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vistaDeCoordenadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeTiposDeTrayectoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeAsociadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeMantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeMantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosPendientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.georreferenciacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeCoordenadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vistaDeCoordenadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asociadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -50,36 +51,60 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.asociadosToolStripMenuItem,
+            this.georreferenciacionToolStripMenuItem,
             this.unoToolStripMenuItem,
             this.mantenimientoToolStripMenuItem,
-            this.georreferenciacionToolStripMenuItem});
+            this.asociadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1419, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1858, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // georreferenciacionToolStripMenuItem
+            // 
+            this.georreferenciacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroDeCoordenadasToolStripMenuItem,
+            this.vistaDeCoordenadasToolStripMenuItem,
+            this.registroDeTiposDeTrayectoriaToolStripMenuItem});
+            this.georreferenciacionToolStripMenuItem.Name = "georreferenciacionToolStripMenuItem";
+            this.georreferenciacionToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.georreferenciacionToolStripMenuItem.Text = "Georreferenciacion";
+            // 
+            // registroDeCoordenadasToolStripMenuItem
+            // 
+            this.registroDeCoordenadasToolStripMenuItem.Name = "registroDeCoordenadasToolStripMenuItem";
+            this.registroDeCoordenadasToolStripMenuItem.Size = new System.Drawing.Size(306, 26);
+            this.registroDeCoordenadasToolStripMenuItem.Text = "Registro de Coordenadas";
+            this.registroDeCoordenadasToolStripMenuItem.Click += new System.EventHandler(this.registroDeCoordenadasToolStripMenuItem_Click);
+            // 
+            // vistaDeCoordenadasToolStripMenuItem
+            // 
+            this.vistaDeCoordenadasToolStripMenuItem.Name = "vistaDeCoordenadasToolStripMenuItem";
+            this.vistaDeCoordenadasToolStripMenuItem.Size = new System.Drawing.Size(306, 26);
+            this.vistaDeCoordenadasToolStripMenuItem.Text = "Registro de Trayectorias";
+            this.vistaDeCoordenadasToolStripMenuItem.Click += new System.EventHandler(this.vistaDeCoordenadasToolStripMenuItem_Click);
+            // 
+            // registroDeTiposDeTrayectoriaToolStripMenuItem
+            // 
+            this.registroDeTiposDeTrayectoriaToolStripMenuItem.Name = "registroDeTiposDeTrayectoriaToolStripMenuItem";
+            this.registroDeTiposDeTrayectoriaToolStripMenuItem.Size = new System.Drawing.Size(306, 26);
+            this.registroDeTiposDeTrayectoriaToolStripMenuItem.Text = "Registro de Tipos de Trayectoria";
             // 
             // unoToolStripMenuItem
             // 
             this.unoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeDatosToolStripMenuItem,
             this.registroDeAsociadosToolStripMenuItem});
             this.unoToolStripMenuItem.Name = "unoToolStripMenuItem";
             this.unoToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
             this.unoToolStripMenuItem.Text = "Seguimiento";
             // 
-            // registroDeDatosToolStripMenuItem
-            // 
-            this.registroDeDatosToolStripMenuItem.Name = "registroDeDatosToolStripMenuItem";
-            this.registroDeDatosToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.registroDeDatosToolStripMenuItem.Text = "Registro de datos";
-            // 
             // registroDeAsociadosToolStripMenuItem
             // 
             this.registroDeAsociadosToolStripMenuItem.Name = "registroDeAsociadosToolStripMenuItem";
-            this.registroDeAsociadosToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.registroDeAsociadosToolStripMenuItem.Text = "Registro de asociados";
+            this.registroDeAsociadosToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.registroDeAsociadosToolStripMenuItem.Text = "Visualizacion de alertas";
+            this.registroDeAsociadosToolStripMenuItem.Click += new System.EventHandler(this.registroDeAsociadosToolStripMenuItem_Click);
             // 
             // mantenimientoToolStripMenuItem
             // 
@@ -96,6 +121,7 @@
             this.registroDeMantenimientoToolStripMenuItem.Name = "registroDeMantenimientoToolStripMenuItem";
             this.registroDeMantenimientoToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
             this.registroDeMantenimientoToolStripMenuItem.Text = "Registro de mantenimiento";
+            this.registroDeMantenimientoToolStripMenuItem.Click += new System.EventHandler(this.registroDeMantenimientoToolStripMenuItem_Click);
             // 
             // listaDeMantenimientosToolStripMenuItem
             // 
@@ -109,48 +135,36 @@
             this.mantenimientosPendientesToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
             this.mantenimientosPendientesToolStripMenuItem.Text = "Mantenimientos pendientes";
             // 
-            // georreferenciacionToolStripMenuItem
-            // 
-            this.georreferenciacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeCoordenadasToolStripMenuItem,
-            this.vistaDeCoordenadasToolStripMenuItem});
-            this.georreferenciacionToolStripMenuItem.Name = "georreferenciacionToolStripMenuItem";
-            this.georreferenciacionToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
-            this.georreferenciacionToolStripMenuItem.Text = "Georreferenciacion";
-            // 
-            // registroDeCoordenadasToolStripMenuItem
-            // 
-            this.registroDeCoordenadasToolStripMenuItem.Name = "registroDeCoordenadasToolStripMenuItem";
-            this.registroDeCoordenadasToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.registroDeCoordenadasToolStripMenuItem.Text = "Registro de Coordenadas";
-            // 
-            // vistaDeCoordenadasToolStripMenuItem
-            // 
-            this.vistaDeCoordenadasToolStripMenuItem.Name = "vistaDeCoordenadasToolStripMenuItem";
-            this.vistaDeCoordenadasToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.vistaDeCoordenadasToolStripMenuItem.Text = "Vista de coordenadas";
-            // 
             // asociadosToolStripMenuItem
             // 
             this.asociadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administrarToolStripMenuItem,
-            this.listaToolStripMenuItem});
+            this.listaToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
             this.asociadosToolStripMenuItem.Name = "asociadosToolStripMenuItem";
-            this.asociadosToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
-            this.asociadosToolStripMenuItem.Text = "Asociados";
+            this.asociadosToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.asociadosToolStripMenuItem.Text = "Socios";
             // 
             // administrarToolStripMenuItem
             // 
             this.administrarToolStripMenuItem.Name = "administrarToolStripMenuItem";
-            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.administrarToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
             this.administrarToolStripMenuItem.Text = "Administrar";
             this.administrarToolStripMenuItem.Click += new System.EventHandler(this.administrarToolStripMenuItem_Click);
             // 
             // listaToolStripMenuItem
             // 
             this.listaToolStripMenuItem.Name = "listaToolStripMenuItem";
-            this.listaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.listaToolStripMenuItem.Text = "Lista";
+            this.listaToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.listaToolStripMenuItem.Text = "Cargos";
+            this.listaToolStripMenuItem.Click += new System.EventHandler(this.listaToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -163,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1419, 769);
+            this.ClientSize = new System.Drawing.Size(1858, 797);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -181,7 +195,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem unoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registroDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeAsociadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeMantenimientoToolStripMenuItem;
@@ -194,5 +207,7 @@
         private System.Windows.Forms.ToolStripMenuItem asociadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeTiposDeTrayectoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
     }
 }

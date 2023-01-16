@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="M_Alertas.cs" />
+    <Compile Include="M_Cargos.cs" />
     <Compile Include="M_Georreferenciaciones.cs" />
+    <Compile Include="M_Mantenimientos.cs" />
     <Compile Include="M_Seguimientos.cs" />
     <Compile Include="M_Socios.cs" />
     <Compile Include="M_Concexion.cs" />
     <Compile Include="M_Login.cs" />
+    <Compile Include="M_Tipos.cs" />
+    <Compile Include="M_Trayectorias.cs" />
+    <Compile Include="M_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

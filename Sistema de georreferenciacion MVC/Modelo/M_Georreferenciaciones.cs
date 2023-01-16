@@ -16,6 +16,22 @@ namespace Modelo
         //DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
 
+        public DataTable ListarTrayectoriasFiltrado_M( int id_trayectoria)
+        {
+            DataTable tabla = new DataTable();
+            ////Procedimientos almacenados
+            comando = new SqlCommand();//Refrescar comando
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "CRUD_GEORREFERENCIACIONES_SP";
+            comando.Parameters.AddWithValue("@modo", "W");
+            comando.Parameters.AddWithValue("@id_trayectoria", id_trayectoria);
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Clear();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+        }
         public DataTable ListarTrayectorias_M()
         {
             DataTable tabla = new DataTable();

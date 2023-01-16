@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="V_Cargos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Cargos.Designer.cs">
+      <DependentUpon>V_Cargos.cs</DependentUpon>
+    </Compile>
     <Compile Include="V_Georreferenciacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V_Mantenimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Mantenimientos.Designer.cs">
+      <DependentUpon>V_Mantenimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_Seguimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Seguimientos.Designer.cs">
+      <DependentUpon>V_Seguimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="V_Socios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +96,27 @@
     <Compile Include="V_Login.Designer.cs">
       <DependentUpon>V_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="V_Tipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Tipos.Designer.cs">
+      <DependentUpon>V_Tipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_Trayectorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Trayectorias.Designer.cs">
+      <DependentUpon>V_Trayectorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="V_Usuarios.Designer.cs">
+      <DependentUpon>V_Usuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="V_Cargos.resx">
+      <DependentUpon>V_Cargos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="V_Georreferenciacion.resx">
       <DependentUpon>V_Georreferenciacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,11 +132,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="V_Mantenimientos.resx">
+      <DependentUpon>V_Mantenimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_Seguimientos.resx">
+      <DependentUpon>V_Seguimientos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="V_Socios.resx">
       <DependentUpon>V_Socios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="V_Login.resx">
       <DependentUpon>V_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_Tipos.resx">
+      <DependentUpon>V_Tipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_Trayectorias.resx">
+      <DependentUpon>V_Trayectorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="V_Usuarios.resx">
+      <DependentUpon>V_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

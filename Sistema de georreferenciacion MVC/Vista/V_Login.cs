@@ -24,7 +24,7 @@ namespace Vista
         {
             DataTable dt = new DataTable();
             dt = objeto_C.Login_C(txtUsuario.Text,txtClave.Text);
-            dataGridView1.DataSource = dt;
+            //dataGridView1.DataSource = dt;
             Conteo = Convert.ToInt32(dt.Rows[0]["Column1"].ToString());
             if (Conteo > 0)
             {
