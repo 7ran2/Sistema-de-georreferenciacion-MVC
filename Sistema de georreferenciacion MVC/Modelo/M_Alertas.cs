@@ -21,7 +21,7 @@ namespace Modelo
             ////Procedimientos almacenados
             comando = new SqlCommand();//Refrescar comando
             comando.Connection = conexion.AbrirConexion();
-            comando.CommandText = "Alertas_SP";
+            comando.CommandText = "ALERTAS_SP";
             comando.Parameters.AddWithValue("@modo", "V");
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
@@ -29,6 +29,19 @@ namespace Modelo
             tabla.Load(leer);
             conexion.CerrarConexion();
             return tabla;
+        }
+        public void InsertarAlerta_M(int id_Trayectoria, string usuario_alerta)
+        {
+            comando.Connection = conexion.AbrirConexion();
+            comando.Parameters.Clear();
+            comando.CommandText = "ALERTAS_SP"; 
+            comando.Parameters.AddWithValue("@modo", "I");
+            comando.Parameters.AddWithValue("@id_Trayectoria", id_Trayectoria);
+            comando.Parameters.AddWithValue("@usuario_alerta", usuario_alerta);
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
+
         }
     }
 }

@@ -106,18 +106,24 @@ namespace Vista
         }
         private void SeleccionarRegistro(object sender, DataGridViewCellMouseEventArgs e)
         {
-            filaseleccionada = e.RowIndex;//Fila seleccionada
-            ////Recuperamos los datos del grid y los agignamos a text box
-            //txtLatitud.Text = dataGridView1.Rows[filaseleccionada].Cells[1].Value.ToString();
-            txtLatitud.Text = dt.Rows[filaseleccionada][2].ToString();
-            txtLongitud.Text = dt.Rows[filaseleccionada][3].ToString();
-            txtProfundidad.Text = dt.Rows[filaseleccionada][4].ToString();
-            txtDescripcion.Text = dt.Rows[filaseleccionada][6].ToString();
+            try
+            {
+                filaseleccionada = e.RowIndex;//Fila seleccionada
+                                              ////Recuperamos los datos del grid y los agignamos a text box
+                                              //txtLatitud.Text = dataGridView1.Rows[filaseleccionada].Cells[1].Value.ToString();
+                txtLatitud.Text = dt.Rows[filaseleccionada][2].ToString();
+                txtLongitud.Text = dt.Rows[filaseleccionada][3].ToString();
+                txtProfundidad.Text = dt.Rows[filaseleccionada][4].ToString();
+                txtDescripcion.Text = dt.Rows[filaseleccionada][6].ToString();
 
-            //Asignamos los valores del grid al marcador 
-            marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
-            //Se posiciona el foco del mapa en esa posicion
-            gMapControl1.Position = marker.Position;
+                //Asignamos los valores del grid al marcador 
+                marker.Position = new PointLatLng(Convert.ToDouble(txtLatitud.Text), Convert.ToDouble(txtLongitud.Text));
+                //Se posiciona el foco del mapa en esa posicion
+                gMapControl1.Position = marker.Position;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)

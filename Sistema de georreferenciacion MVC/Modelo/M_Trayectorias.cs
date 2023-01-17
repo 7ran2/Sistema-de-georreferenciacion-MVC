@@ -42,6 +42,7 @@ namespace Modelo
             comando.Parameters.AddWithValue("@num_orden_t", num_orden_t);
             comando.Parameters.AddWithValue("@estado_t", estado_t);
             comando.Parameters.AddWithValue("@usuario_t", usuario_t);
+            comando.CommandType = CommandType.StoredProcedure;
             comando.ExecuteNonQuery();
 
         }
@@ -57,6 +58,7 @@ namespace Modelo
             comando.Parameters.AddWithValue("@num_orden_t", num_orden_t);
             comando.Parameters.AddWithValue("@estado_t", estado_t);
             comando.Parameters.AddWithValue("@usuario_t", usuario_t);
+            comando.CommandType = CommandType.StoredProcedure;
             comando.ExecuteNonQuery();
 
         }
@@ -68,6 +70,7 @@ namespace Modelo
             comando.Parameters.AddWithValue("@modo", "D");
             comando.Parameters.AddWithValue("@id_trayectoria", id_trayectoria);
             comando.Parameters.AddWithValue("@usuario_t", usuario_t);
+            comando.CommandType = CommandType.StoredProcedure;
             comando.ExecuteNonQuery();
 
         }

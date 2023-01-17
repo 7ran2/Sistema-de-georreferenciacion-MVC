@@ -17,5 +17,11 @@ namespace Controlador
             tabla = objeto_M.MostrarAlertas_M();
             return tabla;
         }
+
+        public void InsertarAlerta_C(string id_Trayectoria, string usuario_alerta)
+        {
+            //Aqui se validan los datos, si es necesario hacer conversion, hay que hacerlo.
+            objeto_M.InsertarAlerta_M(Convert.ToInt32(id_Trayectoria),usuario_alerta);
+        }
     }
 }

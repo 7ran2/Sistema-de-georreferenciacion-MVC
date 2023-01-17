@@ -42,5 +42,10 @@ namespace Vista
             cbxSeguimiento.DisplayMember = "fecha_hora";
             cbxSeguimiento.ValueMember = "id_seguimiento";
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            objeto_C.InsertarMantenimientos_C(cbxSeguimiento.SelectedValue.ToString(), cbxTrayectoriaGeorreferenciacion.SelectedValue.ToString(), txtAsignacionTrabajo.Text, txtDescripcion.Text, dtpInicio.MaxDate.ToString(), dtpFinal.MaxDate.ToString(), "1", usuario);
+        }
     }
 }

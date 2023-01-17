@@ -29,10 +29,10 @@ namespace Controlador
             tabla = objeto_M.MostrarMantenimientos_M();
             return tabla;
         }
-        public void InsertarMantenimientos_C(int id_seguimiento, int id_geo, string asignacion_trabajo, string descripcion_m, string fecha_hora_inicio, string fecha_hora_final, string estado_m, string usuario_m)
+        public void InsertarMantenimientos_C(string id_seguimiento, string id_geo, string asignacion_trabajo, string descripcion_m, string fecha_hora_inicio, string fecha_hora_final, string estado_m, string usuario_m)
         {
             //Aqui se validan los datos, si es necesario hacer conversion, hay que hacerlo.
-            objeto_M.InsertarMantenimiento_M(id_seguimiento, id_geo, asignacion_trabajo, descripcion_m, fecha_hora_inicio, fecha_hora_final, estado_m, usuario_m);
+            objeto_M.InsertarMantenimiento_M(Convert.ToInt32(id_seguimiento), Convert.ToInt32(id_geo), asignacion_trabajo, descripcion_m, fecha_hora_inicio, fecha_hora_final, estado_m, usuario_m);
         }
         public void ModificarMantenimientos_C(int id_seguimiento, int id_geo, string asignacion_trabajo, string descripcion_m, string fecha_hora_inicio, string fecha_hora_final, string estado_m, string usuario_m)
         {

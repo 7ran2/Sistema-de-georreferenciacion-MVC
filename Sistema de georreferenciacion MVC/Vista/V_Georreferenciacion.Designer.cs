@@ -77,7 +77,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(507, 279);
+            this.dataGridView1.Size = new System.Drawing.Size(942, 279);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.SeleccionarRegistro);
             // 
@@ -310,7 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1401, 758);
+            this.ClientSize = new System.Drawing.Size(1836, 758);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbxTrayectorias);
             this.Controls.Add(this.label8);

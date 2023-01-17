@@ -57,7 +57,7 @@
             this.asociadosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1858, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1858, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,7 +68,7 @@
             this.vistaDeCoordenadasToolStripMenuItem,
             this.registroDeTiposDeTrayectoriaToolStripMenuItem});
             this.georreferenciacionToolStripMenuItem.Name = "georreferenciacionToolStripMenuItem";
-            this.georreferenciacionToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.georreferenciacionToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.georreferenciacionToolStripMenuItem.Text = "Georreferenciacion";
             // 
             // registroDeCoordenadasToolStripMenuItem
@@ -96,7 +96,7 @@
             this.unoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeAsociadosToolStripMenuItem});
             this.unoToolStripMenuItem.Name = "unoToolStripMenuItem";
-            this.unoToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.unoToolStripMenuItem.Size = new System.Drawing.Size(107, 26);
             this.unoToolStripMenuItem.Text = "Seguimiento";
             // 
             // registroDeAsociadosToolStripMenuItem
@@ -113,7 +113,7 @@
             this.listaDeMantenimientosToolStripMenuItem,
             this.mantenimientosPendientesToolStripMenuItem});
             this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
-            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(124, 24);
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(124, 26);
             this.mantenimientoToolStripMenuItem.Text = "Mantenimiento";
             // 
             // registroDeMantenimientoToolStripMenuItem
@@ -142,7 +142,7 @@
             this.listaToolStripMenuItem,
             this.usuariosToolStripMenuItem});
             this.asociadosToolStripMenuItem.Name = "asociadosToolStripMenuItem";
-            this.asociadosToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.asociadosToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
             this.asociadosToolStripMenuItem.Text = "Socios";
             // 
             // administrarToolStripMenuItem
@@ -168,9 +168,10 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 31);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1395, 726);
+            this.panel1.Size = new System.Drawing.Size(1858, 767);
             this.panel1.TabIndex = 1;
             // 
             // Principal

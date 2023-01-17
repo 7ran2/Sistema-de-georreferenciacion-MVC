@@ -47,6 +47,7 @@
                         <asp:Button CssClass="btn btn-primary btn-dark" ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
                     </div>
                 </div>
+                <asp:Button CssClass="btn btn-primary btn-green" ID="btnFinalizarTrayectoria" runat="server" Text="Finalizar trayectoria" OnClick="btnFinalizarTrayectoria_Click" />
                 <div>
                     <asp:Label ID="Label4" runat="server" Text="Vacio"></asp:Label>
                 </div>

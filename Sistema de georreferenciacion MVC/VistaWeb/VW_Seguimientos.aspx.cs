@@ -15,6 +15,7 @@ namespace VistaWeb
 
         public string usuario = "f";
         Controlador.C_Seguimientos objeto_C = new C_Seguimientos();
+        Controlador.C_Alertas objetoAlerta_C = new C_Alertas();
         string idSocio = "";
         //private void txtMetrosCubicos_TextCharged(object sender, KeyPressEventArgs e)
         //{
@@ -72,6 +73,11 @@ namespace VistaWeb
                 Label4.ForeColor = System.Drawing.Color.Red;
                 txtLitros.Text = "";
             }
+        }
+
+        protected void btnFinalizarTrayectoria_Click(object sender, EventArgs e)
+        {
+            objetoAlerta_C.InsertarAlerta_C(ddlTrayectorias.SelectedValue.ToString(), usuario);
         }
     }
 }
